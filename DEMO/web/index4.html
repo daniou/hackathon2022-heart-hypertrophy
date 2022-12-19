@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css-circle/css/circle.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Heart hypertrophy detector</title>
+</head>
+<body>
+    <nav id="menu" class="menu">
+        <h1>Heart hypertrophy detector <i class="bi bi-activity"></i></h1>
+    </nav>
+    <div class="global" >
+        <div class="card container d-flex align-items-center justify-content-center mt-5 mb-5 mx-0" style="width: 18rem;">
+            <img class="card-img-top" src="doctor-svgrepo-com.svg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Detect hypertrophy</h5>
+              <p class="card-text">Upload the long axis video <strong>(PSLA)</strong> and we will determine wether the patient has heart hypertrophy or not</p>
+              <!-- <a href="#" class="btn btn-primary w-100">Upload video <i class="bi bi-upload"></i></a> -->
+              <input id="myFile" type="file" class="file btn btn-primary w-100" name="attachement" />
+            </div>
+        </div>  
+        <div>
+            <button class="cool btn btn-primary rounded-circle d-flex flex-column justify-content-center align-items-center " onclick="process()" style="height: 130px; width: 130px;" onclick="process()"><img src="heart-pulse.svg" alt="">Detect</button>   
+        </div>   
+        <div class="output">
+            <button id="processing" style="display: none;" class="btn btn-primary" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Processing...
+            </button>
+            <div id="score" style="" class="c100 p0 center big" >
+                <span id="spantext">0%</span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+            </div>
+            <h5>Hypertrophiated Heart Probability</h5>
+        </div>           
+    </div>
+    <footer><h6>Hackathon Bits x la Marató 2022</h6></footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="eel.js" ></script>
+    <script type="text/javascript" src="index.js" ></script>
+</body>
+</html>
